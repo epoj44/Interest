@@ -36,3 +36,24 @@
     transform: rotate(360deg);
   }
 }
+
+.App {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.Form_form {
+  width: 35%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.Form_label {
+  width: 100%;
+  text-align: left
+}
+.Form_label input[type="number"]{
+  display: block;
+}
