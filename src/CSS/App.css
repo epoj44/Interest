@@ -44,7 +44,7 @@
   align-items: center;
 }
 .Form_form {
-  width: 35%;
+  width: 25%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -80,4 +80,16 @@
 .List_row span, .List_head span {
   width: 25%;
   text-align: left
+}
+.Graph_container {
+  width: 75%;
+  height: 60vh;
+  display: block
+}
+.Graph_svg {
+  background-color: #fff;
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  display: block
 }

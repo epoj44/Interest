@@ -56,7 +56,10 @@ class App extends React.Component {
           formCalculate={this.formCalculate}
           >
         </Form>
-        <Graph></Graph>
+        <Graph
+          data={this.state.data}
+          >
+        </Graph>
         <List 
           data={this.state.data}
           >
