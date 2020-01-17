@@ -57,3 +57,27 @@
 .Form_label input[type="number"]{
   display: block;
 }
+
+.List_container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 65%;
+  justify-content: space-between;
+}
+.List_head {
+  font-weight: bold;
+}
+.List_row, .List_head {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%
+}
+.List_row span:first-child{
+  /*width: 10%!important*/
+}
+.List_row span, .List_head span {
+  width: 25%;
+  text-align: left
+}

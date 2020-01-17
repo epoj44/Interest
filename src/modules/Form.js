@@ -37,7 +37,7 @@ class Form extends React.Component {
                 </label>
                 <label className="Form_label">
                     Percent
-                    <input type="number" name="percent" min="0" max="100" step="0.5" value={this.state.percent} onChange={this.handleInput}/>
+                    <input type="number" name="percent" step="0.5" value={this.state.percent} onChange={this.handleInput}/>
                 </label>
                 <div className="Form_radio_container">
                     <label className="Form_label">
