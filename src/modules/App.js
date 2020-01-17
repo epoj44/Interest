@@ -28,6 +28,7 @@ class App extends React.Component {
       percent: this.state.percent,
       total: Math.round(this.state.balance * (this.state.percent / 100 + 1) * 100) / 100
     })
+    
     for(let i = 1; i < this.state.period; i++){
       data.push({
         number: i+1,
