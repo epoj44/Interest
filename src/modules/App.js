@@ -49,6 +49,8 @@ class App extends React.Component {
   render(){
     return (
       <div className="App">
+                <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
         <Form
           balance={this.state.balance}
           percent={this.state.percent}
@@ -65,6 +67,7 @@ class App extends React.Component {
           data={this.state.data}
           >
         </List>
+
       </div>
     );
   }
