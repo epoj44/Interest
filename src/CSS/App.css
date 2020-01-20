@@ -93,3 +93,6 @@
   margin: 0 auto;
   display: block
 }
+text {
+  transform: rotateZ(180deg) rotateY(180deg)
+}
