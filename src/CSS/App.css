@@ -43,17 +43,18 @@ header {
   flex-wrap: wrap;
   align-items: center;
   justify-content: flex-start;
-  padding: 1%;
+  padding: 2em 1em;
   box-sizing: border-box;
 }
 .Form_form {
-  text-align: left
+  text-align: left;
+  width: 75%
 }
 .Form_label {
   width: 100%;
   text-align: left;
   font-weight: 500;
-  margin: 2% 0;
+  margin: 0.5em 0;
   display: block;
 }
 .Form_label input[type="number"],.Form_label input[type="text"]{
@@ -122,6 +123,7 @@ input[type="submit"] {
 .frame {
   max-width: 100%;
   overflow-x: auto;
+  width: 75%;
 }
 .Graph_container {
   width: 75%;
@@ -167,6 +169,7 @@ svg.chart {
 }
 
 @media all and (max-width: 1200px) {
+  .frame {width: 100%!important}
   .App { justify-content: flex-start }
   .Form_container { justify-content: center!important; }
   .chart { min-width: 1000px!important }
