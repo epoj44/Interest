@@ -1,3 +1,6 @@
+body {
+  background: #fbfbfb;
+}
 .App {
   text-align: center;
 }
@@ -13,9 +16,12 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header {
+  background-color: #03a9f4;
+  box-shadow: 0 0 5px rgba(0,0,0,0.24);
+  min-height: 8vh;
+  z-index: 999;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,38 +30,59 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .App {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
 }
-.Form_form {
+.Form_container{
   width: 25%;
   display: flex;
+  background: #fbfbfb;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  padding: 1%;
+  box-sizing: border-box;
+}
+.Form_form {
+  text-align: left
 }
 .Form_label {
   width: 100%;
-  text-align: left
-}
-.Form_label input[type="number"]{
+  text-align: left;
+  font-weight: 500;
+  margin: 2% 0;
   display: block;
+}
+.Form_label input[type="number"],.Form_label input[type="text"]{
+  border-bottom: 2px solid #03a9f4;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  font-size: 15px;
+  width: 100%;
+  box-sizing: border-box;
+  background: transparent;
+  padding: 0.4em .4em;
+}
+.Form_radio_container {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+}
+input[type="submit"] {
+  background: #03a9f4;
+  border: 0;
+  padding: 0.6em 1.6em;
+  color: #fff;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: 1em;
+  border-radius: 2px;
 }
 
 .List_container {
@@ -63,23 +90,34 @@
   flex-wrap: wrap;
   width: 65%;
   justify-content: space-between;
+  background: #fbfbfb;
+  margin: 2em 0;
+  box-shadow: 0 0 3px #00000014;
 }
 .List_head {
   font-weight: bold;
+  border: 0!important;
+  background: #03a9f4;
+  color: #fff;
+  border-radius: 2px 2px 0 0;
 }
 .List_row, .List_head {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
-  width: 100%
+  width: 100%;
+  border: 0.5px solid #a9a9a9;
+  border-top: 0;
 }
 .List_row span:first-child{
   /*width: 10%!important*/
 }
 .List_row span, .List_head span {
   width: 25%;
-  text-align: left
+  padding: 0.5em;
+  text-align: left;
+  box-sizing: border-box;
 }
 .Graph_container {
   width: 75%;
@@ -95,4 +133,38 @@
 }
 text {
   transform: rotateZ(180deg) rotateY(180deg)
+}
+
+svg.chart {
+  width: 75%;
+}
+
+.Form_radio_container {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.assign {
+  width: 100%;
+  padding: 1em 0;
+  background: #f3f3f3;
+  box-shadow: 0 0 1px rgba(0,0,0,0.24)
+}
+.assign a {
+  color: #2196F3;
+  font-weight: bold;
+  text-decoration: none;
+}
+.assign a:hover{
+  text-decoration: underline;
+}
+
+@media all and (max-width: 1200px) {
+  .App { justify-content: flex-start }
+  .Form_container { justify-content: center!important; }
+  .chart { min-width: 1000px!important }
+  .Form_container { width: 95%!important }
+  .List_container {width: 95%!important; margin: 2em auto!important; display: block!important }
 }

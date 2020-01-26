@@ -7,8 +7,9 @@ import Graph from './Graph';
 class App extends React.Component {
   constructor(props){
       super(props);
-      this.state = {balance: 10000, percent: 3.5, MY: "Month", period: 24, data: undefined}
+      this.state = {balance: "10,000", percent: 4, MY: "Month", period: 24, data: undefined}
   }
+
 
   formCalculate = (inputs) => {
     this.setState({
@@ -42,32 +43,31 @@ class App extends React.Component {
     })
   }
 
-  componentDidUpdate() {
-
-  }
-
   render(){
+
     return (
       <div className="App">
-                <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-
-        <Form
-          balance={this.state.balance}
-          percent={this.state.percent}
-          MY={this.state.MY}
-          period={this.state.period}
-          formCalculate={this.formCalculate}
-          >
-        </Form>
+        <header></header>
+        <div className="Form_container">
+          <Form
+            balance={this.state.balance}
+            percent={this.state.percent}
+            MY={this.state.MY}
+            period={this.state.period}
+            formCalculate={this.formCalculate}
+            >
+          </Form>
+        </div>
         <Graph
           data={this.state.data}
           >
         </Graph>
         <List 
           data={this.state.data}
+          MY={this.state.MY}
           >
         </List>
-
+        <div className="assign">Created By: <a href="http://domonkosferenczy.hu">domonkosferenczy.hu</a></div>
       </div>
     );
   }

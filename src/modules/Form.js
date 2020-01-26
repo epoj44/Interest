@@ -1,4 +1,5 @@
 import React from 'react';
+import Number from './Number'
 
 
 class Form extends React.Component {
@@ -11,49 +12,81 @@ class Form extends React.Component {
             period: this.props.period
         }
         this.handleInput = this.handleInput.bind(this);
+        this.handleBalance = this.handleBalance.bind(this);
     }
 
     handleInput = (event) => {
         const target = event.target;
-        const value = target.value;
+        let value = target.value;
         const name = target.name;
-    
+
         this.setState({
           [name]: value
         });
     }
 
-    calculate = (event) => {
-        event.preventDefault();
-        this.props.formCalculate(this.state);
+    submit = (event) => {
+        this.handleBalance()
+
+        if (event !== undefined){
+            event.preventDefault();
+        }
+        let data = this.state;
+        
+        data.balance = new Number(data.balance);
+        data.balance = data.balance.convertToNum();
+        
+        if (data.period <= 2){
+            data.period = 2
+        }
+        if (data.period > 150){
+            data.period = 150
+        }
+        this.props.formCalculate(data);
+    }
+
+    componentDidMount(){
+        this.submit()
+    }
+
+
+    handleBalance(){
+        let value = new Number(document.getElementsByName("balance")[0].value);
+        value = value.convertToString()
+                this.setState({
+                    balance: value
+                })
+
+
+
     }
 
     render(){
         return (
-            <form className="Form_form">
+            <form className="Form_form" onSubmit={this.submit}>
                 <label className="Form_label">
                     Start balance
-                    <input type="number" name="balance" value={this.state.balance} onChange={this.handleInput}/>
+                    <input type="text" name="balance" value={this.state.balance} onChange={this.handleInput} onBlur={this.handleBalance}/>
                 </label>
                 <label className="Form_label">
                     Percent
-                    <input type="number" name="percent" step="0.5" value={this.state.percent} onChange={this.handleInput}/>
+                    <input type="number" name="percent" min="0" step="0.5" value={this.state.percent} onChange={this.handleInput}/>
                 </label>
                 <div className="Form_radio_container">
                     <label className="Form_label">
-                        Monthly
                         <input type="radio" name="MY" checked={this.state.MY === "Month"} value="Month" onChange={this.handleInput}/>
+                        Monthly
                     </label>
                     <label className="Form_label">
-                        Yearly
                         <input type="radio" name="MY" checked={this.state.MY === "Year"} value="Year" onChange={this.handleInput}/>
+                        Yearly
                     </label>
                 </div>
                 <label className="Form_label">
-                    Number of Months
-                    <input type="number" from="0" name="period" value={this.state.period} onChange={this.handleInput}/>
+                    Number of {(this.state.MY === "Month")?"Months":"Years"}
+                    <input type="number" min="2" name="period" value={this.state.period} onChange={this.handleInput}/>
                 </label>
-                <input type="submit" value="Calculate" onClick={this.calculate}></input>
+                <input type="submit" value="Calculate" onClick={this.submit}></input>
             </form>
         )
     }
