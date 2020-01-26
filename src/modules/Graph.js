@@ -49,12 +49,14 @@ class Graph extends React.Component {
             datums = ""
         }
         return (
-            <svg className="chart" width="1000" height="500" style={{"transform": "rotateX(180deg)"}}>
-                <Grid maxY={this.maxY} minY={this.minY} numbers={this.length} distX={this.distX}></Grid>
-                {datums}
-                {endline}
-                {endpoint}
-            </svg>
+            <div className="frame">
+                <svg className="chart" width="1000" height="500" style={{"transform": "rotateX(180deg)"}}>
+                    <Grid maxY={this.maxY} minY={this.minY} numbers={this.length} distX={this.distX}></Grid>
+                    {datums}
+                    {endline}
+                    {endpoint}
+                </svg>
+            </div>
         )
     }
 }
