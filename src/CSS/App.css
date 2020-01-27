@@ -117,9 +117,6 @@ input[type="submit"] {
   border: 0.5px solid #a9a9a9;
   border-top: 0;
 }
-.List_row span:first-child{
-  /*width: 10%!important*/
-}
 .List_row span, .List_head span {
   width: 25%;
   padding: 0.5em;
