@@ -3,6 +3,7 @@ import {convertToString} from './Number'
 
 
 class Grid extends React.Component {
+    
     render(){
         let grid = []
 
