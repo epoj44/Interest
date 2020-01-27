@@ -6,14 +6,14 @@ class Grid extends React.Component {
     render(){
         let grid = []
 
-        // Vertical lines
+        // Horizontal lines
         let distY = Math.round((this.props.maxY + this.props.minY) / 9)
         for(let i = 1; i <= 9; i++){
             grid.push(<text key={"VT"+i} x={5} y={((50 * i)*-1)+6} fontSize="16" style={{transform: "rotateX(-180deg)"}}>{convertToString(distY * i)}</text>)
             grid.push(<line key={"V"+i} x1={0} y1={50 * i} x2={1000} y2={50 * i} style={{fill:"none",stroke:"gray",strokeWidth:0.25}}></line>)
         }
 
-        // Horizontal lines
+        // Vertical lines
         let amountH = this.props.numbers;
         this.distX = 900 / this.props.numbers
         for(let i = 1; i <= amountH + 4; i++){
