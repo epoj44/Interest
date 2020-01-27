@@ -1,6 +1,6 @@
 import React from 'react'
 import Grid from './Grid'
-import Number from './Number'
+import {convertToString} from './Number'
 
 class Graph extends React.Component {
 
@@ -38,12 +38,11 @@ class Graph extends React.Component {
                             color="gray"
                             strokeDasharray="4" />
             
-            let endpoint_number = new Number(this.props.data[this.props.data.length -1].total)
             endpoint = <text key="endpoint" x={500}
                             y={-1* this.props.data[this.props.data.length -1].total / distY * 50 - 5}
                             fontSize="16"
                             style={{transform: "rotateX(0)!important",stroke:"#03A9F4",fill:"#03A9F4",fontSize:"18px"}}>
-                                {endpoint_number.convertToString()}
+                                {convertToString(this.props.data[this.props.data.length -1].total)}
                         </text>
         } else {
             datums = ""

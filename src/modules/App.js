@@ -10,7 +10,6 @@ class App extends React.Component {
       this.state = {balance: "10,000", percent: 4, MY: "Month", period: 24, data: undefined}
   }
 
-
   formCalculate = (inputs) => {
     this.setState({
       balance: inputs.balance,
@@ -44,7 +43,6 @@ class App extends React.Component {
   }
 
   render(){
-
     return (
       <div className="App">
         <header></header>

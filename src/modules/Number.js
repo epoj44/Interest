@@ -1,11 +1,5 @@
-class Number {
-    constructor(value){
-        this.value = value
-    }
-
-    convertToString = () => {
-        let value = this.value
-        value = value.toString().replace(/,/g, "").replace(/-/g, "").split("").reverse();
+export const convertToString = (value) => {
+        value = value.toString().replace(/[,-]/g, "").split("").reverse();
         let Rnew = [], R = [], Q = []
         if (value.includes(".")){
             // numbers bigger than 1
@@ -25,9 +19,8 @@ class Number {
         return Rnew.reverse().join("") + ((value.includes("."))? "." + Q.reverse().join(""):"")
     }
 
-    convertToNum = () => {
-        return this.value.toString().split(",").join("")
+export const convertToNum = (value) => {
+        return value.toString().split(",").join("")
     }
-}
 
 export default Number;

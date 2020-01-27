@@ -1,6 +1,5 @@
 import React from 'react';
-import Number from './Number'
-
+import {convertToNum, convertToString} from './Number'
 
 class Form extends React.Component {
     constructor(props){
@@ -17,7 +16,7 @@ class Form extends React.Component {
 
     handleInput = (event) => {
         const target = event.target;
-        let value = target.value;
+        const value = event.target.value;
         const name = target.name;
 
         this.setState({
@@ -27,15 +26,12 @@ class Form extends React.Component {
 
     submit = (event) => {
         this.handleBalance()
-
         if (event !== undefined){
             event.preventDefault();
         }
+
         let data = this.state;
-        
-        data.balance = new Number(data.balance);
-        data.balance = data.balance.convertToNum();
-        
+        data.balance = convertToNum(data.balance);
         if (data.period <= 2){
             data.period = 2
         }
@@ -49,16 +45,10 @@ class Form extends React.Component {
         this.submit()
     }
 
-
-    handleBalance(){
-        let value = new Number(document.getElementsByName("balance")[0].value);
-        value = value.convertToString()
-                this.setState({
-                    balance: value
-                })
-
-
-
+    handleBalance = () => {
+        this.setState({
+            balance: convertToString(this.state.balance)
+        })
     }
 
     render(){

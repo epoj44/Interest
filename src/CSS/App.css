@@ -48,7 +48,12 @@ header {
 }
 .Form_form {
   text-align: left;
-  width: 75%
+  width: 100%;
+  background: #f2f2f2;
+  padding: 1em 1em;
+  border-radius: 2px;
+  box-sizing: border-box;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.38);
 }
 .Form_label {
   width: 100%;
@@ -101,6 +106,7 @@ input[type="submit"] {
   background: #03a9f4;
   color: #fff;
   border-radius: 2px 2px 0 0;
+  border-right: 1px solid #03a9f4!important;
 }
 .List_row, .List_head {
   display: flex;
@@ -169,7 +175,7 @@ svg.chart {
 }
 
 @media all and (max-width: 1200px) {
-  .frame {width: 100%!important}
+  .frame {width: 100%!important; padding: 0 0.5em;}
   .App { justify-content: flex-start }
   .Form_container { justify-content: center!important; }
   .chart { min-width: 1000px!important }
