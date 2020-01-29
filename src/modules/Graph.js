@@ -47,7 +47,7 @@ class Graph extends React.Component {
         }
         return (
             <div className="frame">
-                <svg className="chart" width="1000" height="500" style={{"transform": "rotateX(180deg)"}}>
+                <svg className="chart" viewBox="0 0 1000 500" style={{"transform": "rotateX(180deg)"}}>
                     <Grid maxY={this.maxY} minY={this.minY} numbers={this.length} distX={this.distX}></Grid>
                     {datums}
                     {endline}
