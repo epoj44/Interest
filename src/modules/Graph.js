@@ -7,7 +7,7 @@ class Graph extends React.Component {
     render(){
         
         // Is there other options than variables?
-        let datums, endline, endpoint
+        let datums, endline, endpoint, points = []
         if (this.props.data !== undefined){
 
             // It shouldn't be here...?
@@ -20,15 +20,23 @@ class Graph extends React.Component {
             datums = this.props.data
             .filter((datum, index) => index < this.length-1)
             .map((datum, index) => {
+                points.push(<circle
+                cx={(index+1) * this.distX}
+                cy={this.props.data[index+1].total / this.distY * 50 +25}
+                r="1"
+                stroke="black"
+                stroke-width="3"
+            />)
                 return <line
                             key={index}
                             index={index}
                             x1={index * this.distX}
                             y1={this.props.data[index].total / this.distY * 50 +25}
-                            x2={(index+1) * this.distX }
+                            x2={(index+1) * this.distX}
                             y2={this.props.data[index+1].total / this.distY * 50 +25}
                             style={{stroke:"rgb(255,0,0)",strokeWwidth:"2"}}
-                            />  
+                            />
+
               })
             endline =   <line 
                             x1={(this.length -1) * this.distX}
@@ -51,6 +59,7 @@ class Graph extends React.Component {
                 <svg className="chart" viewBox="0 0 1000 500" style={{"transform": "rotateX(180deg)"}}>
                     <Grid maxY={this.maxY} minY={this.minY} numbers={this.length} distX={this.distX}></Grid>
                     {datums}
+                    {points}
                     {endline}
                     {endpoint}
                 </svg>
