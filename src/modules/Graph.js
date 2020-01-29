@@ -13,7 +13,7 @@ class Graph extends React.Component {
             // It shouldn't be here...?
             this.length = this.props.data.length;
             this.maxY = Math.max(this.props.data[this.length -1].total)
-            this.minY = Math.max(this.props.data[0].total)
+            this.minY = Math.max(this.props.data[0].total) + 50
             this.distY = Math.round((this.maxY + this.minY) / 9)
             this.distX = 900 / this.length;
 
@@ -24,20 +24,21 @@ class Graph extends React.Component {
                             key={index}
                             index={index}
                             x1={index * this.distX}
-                            y1={this.props.data[index].total / this.distY * 50}
-                            x2={(index+1) * this.distX}
-                            y2={this.props.data[index+1].total / this.distY * 50}
+                            y1={this.props.data[index].total / this.distY * 50 +25}
+                            x2={(index+1) * this.distX }
+                            y2={this.props.data[index+1].total / this.distY * 50 +25}
                             style={{stroke:"rgb(255,0,0)",strokeWwidth:"2"}}
                             />  
               })
             endline =   <line 
                             x1={(this.length -1) * this.distX}
-                            y1={this.props.data[this.length -1].total / this.distY * 50}
-                            x2="0" y2={this.props.data[this.length -1].total / this.distY * 50}
+                            y1={this.props.data[this.length -1].total / this.distY * 50 +25}
+                            x2="0"
+                            y2={this.props.data[this.length -1].total / this.distY * 50 +25}
                             style={{stroke:"black",color:"gray",strokeDasharray:"4"}} />
             
             endpoint = <text key="endpoint" x={500}
-                            y={-1* this.props.data[this.length -1].total / this.distY * 50 - 5}
+                            y={(-1* this.props.data[this.length -1].total / this.distY * 50 - 5) -25}
                             fontSize="16"
                             style={{transform: "rotateX(0)!important",stroke:"#03A9F4",fill:"#03A9F4",fontSize:"18px"}}>
                                 {convertToString(this.props.data[this.length -1].total)}
