@@ -12,7 +12,7 @@ export const convertToString = (value) => {
         }
         R.map((char, index) => {
             Rnew.push(char);
-            if(((index-2) % 3) == 0 && index !== R.length-1){
+            if(((index-2) % 3) === 0 && index !== R.length-1){
                 Rnew.push(",");
             }
         })

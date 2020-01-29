@@ -21,11 +21,12 @@ class Graph extends React.Component {
             .filter((datum, index) => index < this.length-1)
             .map((datum, index) => {
                 points.push(<circle
+                key={"P"+index+1}
                 cx={(index+1) * this.distX}
                 cy={this.props.data[index+1].total / this.distY * 50 +25}
                 r="1"
                 stroke="black"
-                stroke-width="3"
+                strokeWidth="3"
             />)
                 return <line
                             key={index}
