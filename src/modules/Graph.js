@@ -23,7 +23,7 @@ class Graph extends React.Component {
                 points.push(
                 <circle
                     key={"P"+index+1}
-                    cx={(index+1) * this.distX}
+                    cx={(index+1) * this.distX +75}
                     cy={this.props.data[index+1].total / this.distY * 50 +25}
                     r="1"
                     stroke="black"
@@ -33,9 +33,9 @@ class Graph extends React.Component {
                 <line
                     key={index}
                     index={index}
-                    x1={index * this.distX}
+                    x1={index * this.distX +75}
                     y1={this.props.data[index].total / this.distY * 50 +25}
-                    x2={(index+1) * this.distX}
+                    x2={(index+1) * this.distX +75}
                     y2={this.props.data[index+1].total / this.distY * 50 +25}
                     style={{stroke:"rgb(255,0,0)",strokeWwidth:"2"}}
                 />)
@@ -43,9 +43,9 @@ class Graph extends React.Component {
               })
             endline = 
             <line 
-                x1={(this.length -1) * this.distX}
+                x1={(this.length -1) * this.distX +75}
                 y1={this.props.data[this.length -1].total / this.distY * 50 +25}
-                x2="0"
+                x2={75}
                 y2={this.props.data[this.length -1].total / this.distY * 50 +25}
                 style={{stroke:"black",color:"gray",strokeDasharray:"4"}}
             />
