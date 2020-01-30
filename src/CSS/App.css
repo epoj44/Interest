@@ -109,7 +109,7 @@ input[type="submit"] {
 }
 .List_row, .List_head {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   width: 100%;
@@ -186,7 +186,11 @@ svg.chart {
   .frame {width: 100%!important; padding: 0 0.5em;}
   .App { justify-content: flex-start }
   .Form_container { justify-content: center!important; }
-  .Form_container { width: 95%!important }
+  .Form_container { width: 100%!important }
   .List_container {width: 95%!important; margin: 2em auto!important; display: block!important }
   .chart { border-radius: 6px!important; border-bottom:1px solid #dcdcdc!important ;border-right:1px solid #dcdcdc!important  }
+}
+
+@media all and (max-width: 500px){
+  .List_row span, .List_head span { width: 50%!important }
 }
