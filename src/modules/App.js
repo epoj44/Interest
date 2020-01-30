@@ -39,7 +39,7 @@ class App extends React.Component {
       }
 
      if (this.state.MY === "Month"){
-        data = data.filter(datum => datum.number % 12 == 0).map((datum, index) => {
+        data = data.filter(datum => datum.number % 12 === 0).map((datum, index) => {
           datum.previous = data[datum.number-12].previous
           datum.number = datum.number / 12
           return datum

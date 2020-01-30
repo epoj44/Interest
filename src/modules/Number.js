@@ -10,12 +10,12 @@ export const convertToString = (value) => {
         } else {
             R = value;
         }
-        R.map((char, index) => {
-            Rnew.push(char);
-            if(((index-2) % 3) === 0 && index !== R.length-1){
+        for (let i = 0; i < R.length; i++){
+            Rnew.push(R[i]);
+            if(((i-2) % 3) === 0 && i !== R.length-1){
                 Rnew.push(",");
             }
-        })
+        }
         return Rnew.reverse().join("") + ((value.includes("."))? "." + Q.reverse().join(""):"")
     }
 
