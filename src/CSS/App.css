@@ -103,10 +103,12 @@ input[type="submit"] {
 .List_head {
   font-weight: bold;
   border: 0!important;
-  background: #03a9f4;
+  background: #34b9f5;
   color: #fff;
-  border-radius: 2px 2px 0 0;
-  border-right: 1px solid #03a9f4!important;
+  border-right: 1px solid #34b9f5!important;
+}
+.List_head span {
+  padding: 1em!important
 }
 .List_row, .List_head {
   display: flex;
@@ -146,6 +148,11 @@ text {
 svg.chart {
   max-width: 100%;
   width: 100%;
+  padding: 0.5em 0 0 0;
+  border: 1px solid #dcdcdc;
+  border-radius: 6px 6px 0 0;
+  box-shadow: 2px -1px 1px #e6e6e6;
+  background: #fff;
 }
 
 .Form_radio_container {
@@ -176,4 +183,5 @@ svg.chart {
   .Form_container { justify-content: center!important; }
   .Form_container { width: 95%!important }
   .List_container {width: 95%!important; margin: 2em auto!important; display: block!important }
+  .chart { border-radius: 6px!important; }
 }

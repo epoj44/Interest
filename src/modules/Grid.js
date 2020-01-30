@@ -27,9 +27,9 @@ class Grid extends React.Component {
         return [
             grid,
             // X axis:
-            <line key="-1" x1="75" y1="25" x2="1000" y2="25" style={{fill:"none",stroke:"black",strokeWidth:2}}></line>,
+            <line key="-1" x1="75" y1="25" x2="1000" y2="25" style={{fill:"none",stroke:"#00496a",strokeWidth:2}}></line>,
             // Y axis:
-            <line key="0" x1="75" y1="25" x2="75" y2="500" style={{fill:"none",stroke:"black",strokeWidth:2}}></line>
+            <line key="0" x1="75" y1="25" x2="75" y2="500" style={{fill:"none",stroke:"#00496a",strokeWidth:2}}></line>
         ]
     }
 }
