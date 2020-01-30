@@ -7,7 +7,7 @@ import Graph from './Graph';
 class App extends React.Component {
   constructor(props){
       super(props);
-      this.state = {balance: "10,000", percent: 4, MY: "Month", period: 24, data: undefined}
+      this.state = {balance: "1,000", percent: 4, MY: "Month", period: 8, data: undefined}
   }
 
   formCalculate = (inputs) => {
