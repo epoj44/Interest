@@ -53,7 +53,7 @@ class App extends React.Component {
   render(){
     return (
       <div className="App">
-        <header></header>
+        <header>Compound Interest Calculator</header>
         <div className="Form_container">
           <Form
             balance={this.state.balance}

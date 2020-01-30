@@ -17,17 +17,14 @@ body {
 }
 
 header {
-  background-color: #03a9f4;
+  background-color: #006c9d;
   box-shadow: 0 0 5px rgba(0,0,0,0.24);
-  min-height: 8vh;
   z-index: 999;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
+  text-align: left;
+  padding: 1em;
+  font-weight: bold;
 }
 
 .App {
@@ -63,7 +60,7 @@ header {
   display: block;
 }
 .Form_label input[type="number"],.Form_label input[type="text"]{
-  border-bottom: 2px solid #03a9f4;
+  border-bottom: 2px solid #006c9d;
   border-top: 0;
   border-left: 0;
   border-right: 0;
@@ -80,7 +77,7 @@ header {
   flex-wrap: wrap;
 }
 input[type="submit"] {
-  background: #03a9f4;
+  background: #006c9d;
   border: 0;
   padding: 0.6em 1.6em;
   color: #fff;
@@ -103,9 +100,9 @@ input[type="submit"] {
 .List_head {
   font-weight: bold;
   border: 0!important;
-  background: #34b9f5;
+  background: #006c9d;
   color: #fff;
-  border-right: 1px solid #34b9f5!important;
+  border-right: 1px solid #006c9d!important;
 }
 .List_head span {
   padding: 1em!important
@@ -139,7 +136,7 @@ input[type="submit"] {
   width: 90%;
   height: 100%;
   margin: 0 auto;
-  display: block
+  display: block;
 }
 text {
   transform: rotateZ(180deg) rotateY(180deg)
@@ -153,6 +150,9 @@ svg.chart {
   border-radius: 6px 6px 0 0;
   box-shadow: 2px -1px 1px #e6e6e6;
   background: #fff;
+  box-sizing: border-box;
+  border-bottom: 0;
+  border-right: 0
 }
 
 .Form_radio_container {
@@ -183,5 +183,5 @@ svg.chart {
   .Form_container { justify-content: center!important; }
   .Form_container { width: 95%!important }
   .List_container {width: 95%!important; margin: 2em auto!important; display: block!important }
-  .chart { border-radius: 6px!important; }
+  .chart { border-radius: 6px!important; border-bottom:1px solid #dcdcdc!important ;border-right:1px solid #dcdcdc!important  }
 }
