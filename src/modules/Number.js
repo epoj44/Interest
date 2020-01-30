@@ -23,4 +23,18 @@ export const convertToNum = (value) => {
         return value.toString().split(",").join("")
     }
 
+export const convertToOver = (value) => {
+    if (value < 9999999){
+        return convertToString(value)
+    }
+    else if (value > 999999999) {
+        if (value > 999999999999){
+            return "NaN"
+        }
+        return (Math.round(value/10000000))/100 + "B"
+    }
+    else {
+        return (Math.round(value/1000000)) + "M"
+    }
+}
 export default Number;

@@ -1,5 +1,5 @@
 import React from 'react'
-import {convertToString} from './Number'
+import {convertToOver} from './Number'
 
 
 class Grid extends React.Component {
@@ -10,7 +10,7 @@ class Grid extends React.Component {
         // Horizontal lines
         let distY = Math.round((this.props.maxY + this.props.minY) / 9)
         for(let i = 1; i <= 9; i++){
-            let label = ((distY * i < 9999999)?convertToString(distY * i):Math.round(distY * i/1000000) + "M")
+            let label = convertToOver(distY * i)
             grid.push(<line key={"V"+i} x1={75} y1={50 * i +25} x2={1000} y2={50 * i +25} style={{fill:"none",stroke:"rgb(200, 200, 200)",strokeWidth:1}}></line>)
             grid.push(<text key={"VT"+i} x={(label.length < 6)?label.length*2:5} y={((50 * i)*-1)+6 -25} fontSize="16" style={{transform: "rotateX(-180deg)"}}>{label}</text>)
         }
