@@ -73,7 +73,7 @@ class Form extends React.Component {
                     </label>
                 </div>
                 <label className="Form_label">
-                    Number of {(this.state.MY === "Month")?"Months":"Years"}
+                    Number of Years
                     <input type="number" min="2" name="period" value={this.state.period} onChange={this.handleInput}/>
                 </label>
                 <input type="submit" value="Calculate" onClick={this.submit}></input>

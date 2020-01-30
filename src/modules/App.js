@@ -26,10 +26,10 @@ class App extends React.Component {
         number: 1,
         previous: this.state.balance,
         percent: this.state.percent,
-        total: Math.round(this.state.balance * (this.state.percent / 100 + 1) * 100) / 100
+        total: (this.state.balance * (this.state.percent / 100 + 1) * 100) / 100
       })
       
-      for(let i = 1; i < (this.state.period * ((this.state.MY === "Year")?12:1)) ; i++){
+      for(let i = 1; i < (this.state.period * ((this.state.MY === "Month")?12:1)) ; i++){
         data.push({
           number: i+1,
           previous: data[i-1].total,
@@ -38,8 +38,9 @@ class App extends React.Component {
         })
       }
 
-      if (this.state.MY === "Year"){
-        data = data.filter(datum => datum.number % 12 === 0).map(datum => {
+     if (this.state.MY === "Month"){
+        data = data.filter(datum => datum.number % 12 == 0).map((datum, index) => {
+          datum.previous = data[datum.number-12].previous
           datum.number = datum.number / 12
           return datum
         })

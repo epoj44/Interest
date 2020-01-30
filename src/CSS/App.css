@@ -122,6 +122,11 @@ input[type="submit"] {
   text-align: left;
   box-sizing: border-box;
 }
+sup { 
+  font-size: 6px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
 .frame {
   max-width: 100%;
   width: 75%;

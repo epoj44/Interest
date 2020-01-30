@@ -10,7 +10,7 @@ class List extends React.Component {
                 <div className="List_row" key={row.number}>
                     <span>{row.number}</span>
                     <span>$ {convertToString(row.previous)}</span>
-                    <span>{row.percent > 0 ? "+" : ""}{row.percent}%</span>
+                    <span>{row.percent > 0 ? "+" : ""}{row.percent}% {this.props.MY == "Month"?<sup>Monthly</sup>:""}</span>
                     <span>$ {convertToString(row.total)}</span>
                 </div>
             )
@@ -18,7 +18,7 @@ class List extends React.Component {
         return (
             <div className="List_container">
                 <div className="List_head">
-                    <span>{this.props.MY}</span>
+                    <span>Year</span>
                     <span>Previous</span>
                     <span>Percent</span>
                     <span>Total</span>
