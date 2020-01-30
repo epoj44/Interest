@@ -21,25 +21,33 @@ class App extends React.Component {
   }
 
   updateData(){
-    const data = [];
-    data.push({
-      number: 1,
-      previous: this.state.balance,
-      percent: this.state.percent,
-      total: Math.round(this.state.balance * (this.state.percent / 100 + 1) * 100) / 100
-    })
-    
-    for(let i = 1; i < this.state.period; i++){
+    let data = [];
       data.push({
-        number: i+1,
-        previous: data[i-1].total,
+        number: 1,
+        previous: this.state.balance,
         percent: this.state.percent,
-        total: Math.round(data[i-1].total * (this.state.percent / 100 + 1) * 100) / 100
+        total: Math.round(this.state.balance * (this.state.percent / 100 + 1) * 100) / 100
       })
-    }
-    this.setState({
-      data: data
-    })
+      
+      for(let i = 1; i < (this.state.period * ((this.state.MY === "Year")?12:1)) ; i++){
+        data.push({
+          number: i+1,
+          previous: data[i-1].total,
+          percent: this.state.percent,
+          total: Math.round(data[i-1].total * (this.state.percent / 100 + 1) * 100) / 100
+        })
+      }
+
+      if (this.state.MY === "Year"){
+        data = data.filter(datum => datum.number % 12 === 0).map(datum => {
+          datum.number = datum.number / 12
+          return datum
+        })
+      }
+      
+      this.setState({
+        data: data
+      })
   }
 
   render(){
