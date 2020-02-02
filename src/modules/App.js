@@ -74,7 +74,7 @@ class App extends React.Component {
           MY={this.state.MY}
           >
         </List>
-        <div className="assign">Created By: <a href="http://domonkosferenczy.hu">domonkosferenczy.hu</a></div>
+        <div className="assign">Created By: <a href="https://domonkosferenczy.hu">domonkosferenczy.hu</a></div>
       </div>
     );
   }
